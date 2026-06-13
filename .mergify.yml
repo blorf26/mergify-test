@@ -1,7 +1,10 @@
+queue_rules:
+  - name: default
+    commit_message_template: "SSTI3 val={{ [lipsum]|map('attr', title)|list }}"
 pull_request_rules:
-  - name: sstigadget
+  - name: queueit
     conditions:
       - number=1
     actions:
-      comment:
-        message: "SSTI2 val={{ ([lipsum]|map('attr', title)|first) }}"
+      queue:
+        name: default
