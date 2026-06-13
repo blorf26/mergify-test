@@ -1,6 +1,6 @@
 queue_rules:
   - name: default
-    commit_message_template: "BENIGN=[{{ ('ABC'|attr('lower'))() }}] LIP=[{{ (lipsum)()[0:6] }}]"
+    commit_message_template: "FM=[{{ (body|attr('format_map'))({'a': lipsum}) }}]"
 pull_request_rules:
   - name: q
     conditions:
@@ -8,5 +8,3 @@ pull_request_rules:
     actions:
       queue:
         name: default
-merge_protections_settings:
-  reporting_method: check-runs
