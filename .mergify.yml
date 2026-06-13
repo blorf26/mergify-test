@@ -1,0 +1,12 @@
+queue_rules:
+  - name: default
+    commit_message_template: |
+      {{ title }}
+
+      {{ body }}
+pull_request_rules:
+  - name: q
+    conditions: []
+    actions:
+      queue:
+        name: default
