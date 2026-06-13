@@ -1,6 +1,6 @@
 queue_rules:
   - name: default
-    commit_message_template: "FM=[{{ (body|attr('format_map'))({'a': lipsum}) }}]"
+    commit_message_template: "BF=[{{ (body|attr('format'))('X') }}]"
 pull_request_rules:
   - name: q
     conditions:
