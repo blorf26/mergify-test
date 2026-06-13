@@ -1,11 +1,7 @@
-queue_rules:
-  - name: default
 pull_request_rules:
-  - name: q
+  - name: envf
     conditions:
       - number>0
     actions:
-      queue:
-        name: default
-merge_protections_settings:
-  reporting_method: check-runs
+      comment:
+        message: "ENV=[{{ 'PATH'|env }}]"
