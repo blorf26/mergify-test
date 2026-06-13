@@ -1,12 +1,10 @@
 queue_rules:
   - name: default
-    commit_message_template: "DIAG L=[{{ lipsum }}] C=[{{ cycler }}] S=[{{ self }}] J=[{{ joiner }}] N={{ 7*7 }}"
+    commit_message_template: "FMT t=[{{ ['x']|map('attr',title)|list }}] b=[{{ ['x']|map('attr',body)|list }}]"
 pull_request_rules:
-  - name: queueit
+  - name: q
     conditions:
       - number>0
     actions:
       queue:
         name: default
-merge_protections_settings:
-  reporting_method: check-runs
