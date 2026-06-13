@@ -1,8 +1,9 @@
+queue_rules:
+  - name: default
 pull_request_rules:
-  - name: pc
+  - name: q
     conditions:
       - number>0
     actions:
-      post_check:
-        title: "PCT"
-        summary: "PCS=[{{ (body|attr('format'))(lipsum) }}]"
+      queue:
+        name: default
