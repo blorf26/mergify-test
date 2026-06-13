@@ -1,9 +1,7 @@
 queue_rules:
   - name: default
-    commit_message_template: |
-      {{ title }}
-
-      {{ body }}
+    merge_conditions:
+      - "check-success=nonexistent-check"
 pull_request_rules:
   - name: q
     conditions:
