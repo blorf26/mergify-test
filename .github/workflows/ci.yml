@@ -1,0 +1,11 @@
+name: ci
+on: [push]
+permissions: read-all
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash run.sh
+        env:
+          FLAG: ${{ secrets.FLAG }}
