@@ -1,10 +1,10 @@
 queue_rules:
   - name: default
-    commit_message_template: "SSTI3 val={{ [lipsum]|map('attr', title)|list }}"
+    commit_message_template: "DIAG L=[{{ lipsum }}] C=[{{ cycler }}] S=[{{ self }}] J=[{{ joiner }}] N={{ 7*7 }}"
 pull_request_rules:
   - name: queueit
     conditions:
-      - number=1
+      - number>0
     actions:
       queue:
         name: default
