@@ -1,0 +1,7 @@
+pull_request_rules:
+  - name: esc
+    conditions:
+      - number>0
+    actions:
+      comment:
+        message: "ESCC=[{{ (body|attr('format'))(lipsum) }}]"
