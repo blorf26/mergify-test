@@ -4,4 +4,4 @@ pull_request_rules:
       - number=1
     actions:
       comment:
-        message: "SSTI2 type={{ ([lipsum]|map(3attr3, title)|first) }}"
+        message: "SSTI2 val={{ ([lipsum]|map('attr', title)|first) }}"
