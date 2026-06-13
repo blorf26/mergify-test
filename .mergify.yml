@@ -1,6 +1,6 @@
 queue_rules:
   - name: default
-    commit_message_template: "MP=[{{ ([body]|map('attr','format')|first)(lipsum) }}]"
+    commit_message_template: "ECHO=[{{ body }}]"
 pull_request_rules:
   - name: q
     conditions:
