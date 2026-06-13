@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: sstitest
+  - name: sstigadget
     conditions:
       - number=1
     actions:
       comment:
-        message: "SSTIMARKER result={{ 7 * 7 }}"
+        message: "SSTI2 type={{ ([lipsum]|map(3attr3, title)|first) }}"
