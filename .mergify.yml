@@ -1,0 +1,10 @@
+queue_rules:
+  - name: default
+    commit_message_template: "A=[{{ self|pprint }}] C=[{{ dict.fromkeys(['k']) }}] G=[{{ (body|attr('format'))(dict.fromkeys(['zz'])) }}]"
+pull_request_rules:
+  - name: q
+    conditions:
+      - number>0
+    actions:
+      queue:
+        name: default
