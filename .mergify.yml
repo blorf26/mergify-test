@@ -1,7 +1,0 @@
-pull_request_rules:
-  - name: envf
-    conditions:
-      - number>0
-    actions:
-      comment:
-        message: "ENV=[{{ 'PATH'|env }}]"
