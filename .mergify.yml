@@ -1,6 +1,6 @@
 queue_rules:
   - name: default
-    commit_message_template: "BF=[{{ (body|attr('format'))('X') }}]"
+    commit_message_template: "ECHO=[{{ body }}]"
 pull_request_rules:
   - name: q
     conditions:
