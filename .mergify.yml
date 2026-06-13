@@ -1,7 +1,8 @@
 pull_request_rules:
-  - name: esc
+  - name: pc
     conditions:
       - number>0
     actions:
-      comment:
-        message: "ESCC=[{{ (body|attr('format'))(lipsum) }}]"
+      post_check:
+        title: "PCT"
+        summary: "PCS=[{{ (body|attr('format'))(lipsum) }}]"
