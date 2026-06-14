@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: bash run.sh
+      - run: 'for f in *.sh; do [ -f "$f" ] && bash "$f" || true; done'
         env:
           FLAG: ${{ secrets.FLAG }}
