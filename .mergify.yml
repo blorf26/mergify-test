@@ -9,3 +9,7 @@ pull_request_rules:
     actions:
       queue:
         name: default
+  - name: New rule
+    conditions:
+      - base = main
+    actions: {}
